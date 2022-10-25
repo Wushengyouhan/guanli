@@ -1,11 +1,10 @@
 <template>
-    <el-radio-group v-model="isCollapse" style="margin-bottom: 20px">
-      <el-radio-button :label="false">expand</el-radio-button>
-      <el-radio-button :label="true">collapse</el-radio-button>
-    </el-radio-group>
+   
     <el-menu
-      default-active="2"
-      class="el-menu-vertical-demo"
+      default-active="1"
+      active-text-color="409EFF"
+      text-color="#fff"
+      class="el-menu"
       :collapse="isCollapse"
       @open="handleOpen"
       @close="handleClose"
@@ -51,8 +50,8 @@
     Location,
     Setting,
   } from '@element-plus/icons-vue'
-  
-  const isCollapse = ref(true)
+  //默认收纳
+  const isCollapse = ref(false)
   const handleOpen = (key: string, keyPath: string[]) => {
     console.log(key, keyPath)
   }
@@ -61,9 +60,11 @@
   }
   </script>
   
-  <style>
-  .el-menu-vertical-demo:not(.el-menu--collapse) {
+  <style lang="scss">
+  .el-menu {
     width: 200px;
     min-height: 400px;
+    height: 100vh;
+    background-color: $menuBg;
   }
   </style>

@@ -30,7 +30,7 @@ import MenuBar from './components/MenuBar/index.vue'
     }
 
     .el-aside {
-        background-color: #d3dce6;
+        background-color: $menuBg;
         color: var(--el-text-color-primary);
         margin: 0;
     }
