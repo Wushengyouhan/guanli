@@ -1,11 +1,17 @@
 <template>
     <div class="logo">
         <img src="@/assets/vue.svg" alt="">
-        <h2 class="title">vue3-admin</h2>
+        <h2 v-show="!collapsed" class="title">vue3-admin</h2>
     </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+    defineProps({
+        collapsed:{
+            type:Boolean
+        }
+    })
+</script>
 
 <style lang="scss" scoped>
 .logo {
@@ -16,7 +22,6 @@
     overflow: hidden;
     // 不换行
     white-space: nowrap;
-
     .title {
         font-size: 20px;
         color: white;

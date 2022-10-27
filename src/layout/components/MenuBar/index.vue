@@ -5,9 +5,7 @@
       active-text-color="409EFF"
       text-color="#fff"
       class="el-menu"
-      :collapse="isCollapse"
-      @open="handleOpen"
-      @close="handleClose"
+      :collapse="collapsed"
     >
       <el-sub-menu index="1">
         <template #title>
@@ -50,21 +48,20 @@
     Location,
     Setting,
   } from '@element-plus/icons-vue'
-  //默认收纳
-  const isCollapse = ref(false)
-  const handleOpen = (key: string, keyPath: string[]) => {
-    console.log(key, keyPath)
-  }
-  const handleClose = (key: string, keyPath: string[]) => {
-    console.log(key, keyPath)
-  }
+  //收纳状态
+
+  defineProps({
+    collapsed:{
+        type:Boolean
+    }
+  })
+
   </script>
   
   <style lang="scss">
   .el-menu {
-    width: 200px;
-    min-height: 400px;
-    height: 100vh;
     background-color: $menuBg;
+    // 边框去掉对齐
+    border: 0;
   }
   </style>
